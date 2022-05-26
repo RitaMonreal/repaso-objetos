@@ -9,6 +9,10 @@ public class PoligonoRegular {
         this.lado=lado;
     }
 
+    public PoligonoRegular(int numeroDeLados){
+        this.numeroDeLados=numeroDeLados;
+    }
+
     public void setLado(double lado) {
         this.lado=lado;
     }

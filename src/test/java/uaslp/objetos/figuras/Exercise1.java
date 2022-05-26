@@ -3,7 +3,6 @@ package uaslp.objetos.figuras;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-
 public class Exercise1 {
 
     // CREA LAS CLASES Y METODOS NECESARIOS PARA QUE EL TEST SE EJECUTE CORRECTAMENTE
@@ -31,7 +30,7 @@ public class Exercise1 {
     public void testConstructorCuadrado(){
         // Given:
         double lado = 10;
-        Cuadrado cuadrado = new Cuadrado();
+        Cuadrado cuadrado = new Cuadrado(lado);
 
         // When:
         double area = cuadrado.getArea();
@@ -79,7 +78,7 @@ public class Exercise1 {
         // Given:
         double lado = 10;
         int numeroDeLados = 6;
-        PoligonoRegular poligono = new PoligonoRegular(numeroDeLados, lado);
+        PoligonoRegular poligono = new PoligonoRegular(numeroDeLados);
 
         poligono.setLado(lado);
 
@@ -87,7 +86,7 @@ public class Exercise1 {
         double area = poligono.getArea();
 
         // Then:
-        Assertions.assertEquals(300, area);
+        Assertions.assertEquals(259.8076211353316, area);
     }
 
     @Test
@@ -102,7 +101,7 @@ public class Exercise1 {
 
         // Then:
         Assertions.assertEquals(lado, poligono.getLado());
-        Assertions.assertEquals(300, area);
+        Assertions.assertEquals(259.8076211353316, area);
     }
 
 }
