@@ -1,19 +1,22 @@
 package uaslp.objetos.figuras;
 
 import static java.lang.Math.tan;
-import static java.lang.Math.tanh;
 
-public class PoligonoRegular {
+public class PoligonoRegular extends Figura {
     private double lado;
     private int numeroDeLados;
-    private double apotema;
 
     public PoligonoRegular(int numeroDeLados, double lado) {
+        super("Poligono Regular");
         this.numeroDeLados=numeroDeLados;
         this.lado=lado;
     }
 
     public PoligonoRegular(int numeroDeLados){
+        super("Poligono Regular");
+        if(numeroDeLados<5){
+            throw new NumeroInvalidoDeLados("Número de lados válido a partir de 5");
+        }
         this.numeroDeLados=numeroDeLados;
     }
 
@@ -28,9 +31,9 @@ public class PoligonoRegular {
 
         grados = 360/(numeroDeLados*2);
         rad=Math.toRadians(grados);
-        apotema = lado/(2*tan(rad));
+        double apotema = lado / (2 * tan(rad));
 
-        return (getPerimetro()*apotema)/2;
+        return (getPerimetro()* apotema)/2;
     }
 
     private double getPerimetro() {
@@ -40,6 +43,4 @@ public class PoligonoRegular {
     public double getLado() {
         return lado;
     }
-
-
 }
